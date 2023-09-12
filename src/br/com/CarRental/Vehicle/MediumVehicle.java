@@ -4,5 +4,6 @@ public class MediumVehicle extends Vehicle{
     public MediumVehicle(String licensePlate, String name){
         this.licensePlate = licensePlate;
         this.name = name;
+        this.availability = Availability.AVAILABLE;
     }
 }

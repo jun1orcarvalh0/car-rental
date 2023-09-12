@@ -4,6 +4,16 @@ public abstract class Vehicle {
     protected String licensePlate;
     protected String name;
 
+    public Availability getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(Availability availability) {
+        this.availability = availability;
+    }
+
+    protected Availability availability;
+
     public String getLicensePlate() {
         return licensePlate;
     }
