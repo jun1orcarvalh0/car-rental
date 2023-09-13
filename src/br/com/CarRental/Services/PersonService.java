@@ -8,17 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonService {
+    public List<Person> getRegisteredPeople() {
+        return registeredPeople;
+    }
+
     List<Person> registeredPeople;
 
     public PersonService(){
         registeredPeople = new ArrayList<>();
     }
 
-    public void addLegalPerson(LegalPerson person){
+    public void addPerson(Person person){
         registeredPeople.add(person);
     }
 
-    public void addPhysicalPerson(PhysicalPerson pessoa){
-        registeredPeople.add(pessoa);
+    public void editPersonName(Person person, String name) {
+        person.setName(name);
     }
 }
