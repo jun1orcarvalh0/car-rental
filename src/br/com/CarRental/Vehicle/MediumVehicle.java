@@ -5,5 +5,6 @@ public class MediumVehicle extends Vehicle{
         this.licensePlate = licensePlate;
         this.name = name;
         this.availability = Availability.AVAILABLE;
+        this.baseValue = 150;
     }
 }

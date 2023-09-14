@@ -4,6 +4,8 @@ public abstract class Vehicle {
     protected String licensePlate;
     protected String name;
 
+    protected double baseValue;
+
     public Availability getAvailability() {
         return availability;
     }
@@ -28,5 +30,8 @@ public abstract class Vehicle {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public double getBaseValue() {
+        return baseValue;
     }
 }
