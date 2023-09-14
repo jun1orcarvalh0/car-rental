@@ -1,9 +1,13 @@
 package br.com.CarRental.Services;
 
+import br.com.CarRental.Person.Person;
+import br.com.CarRental.Person.PersonDocument;
+import br.com.CarRental.Services.Payment.Payment;
 import br.com.CarRental.Vehicle.Availability;
 import br.com.CarRental.Vehicle.Vehicle;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -57,18 +61,24 @@ public class VehicleRentalService {
         return found;
     }
 
-    public void rentVehicle(String licensePlate, String document){
+    public void rentVehicle(String licensePlate, PersonDocument document, Date date, String hour){
         for (Vehicle vehicle : vehicleList){
             if(vehicle.getLicensePlate().equals(licensePlate)){
                 if (vehicle.getAvailability().equals(Availability.RENTED)) {
-                    System.out.println("O Veículo já está alugado.");
+                    System.out.println("The vehicle is already rented.");
                     return;
                 }
                 vehicle.setAvailability(Availability.RENTED);
-                rentalReportList.add(new RentalReport(licensePlate, document));
+                rentalReportList.add(new RentalReport(licensePlate, document, date, hour));
                 return;
             }
         }
-        System.out.println("Veiculo não cadastrado no sistema.");
+        System.out.println("The vehicle is not registered in the system.");
+    }
+
+    public void getVehicleBack(Vehicle vehicle){
+        vehicle.setAvailability(Availability.AVAILABLE);
+
+
     }
 }

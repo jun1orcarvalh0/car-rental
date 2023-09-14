@@ -1,5 +1,5 @@
 package br.com.CarRental.Person;
 
-public interface GetDocument {
+public interface PersonDocument {
     String getDocument();
 }

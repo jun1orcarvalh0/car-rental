@@ -1,15 +1,27 @@
 package br.com.CarRental.Services;
 
-import java.time.Clock;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import br.com.CarRental.Person.PersonDocument;
+
+import java.util.Date;
 
 
 public class RentalReport {
-    String document;
+    String licensePlate;
+    Date rentDate;
+    String rentTime;
+    Date devolutionDate;
+    PersonDocument document;
+/*    LegalPersonPayment legalpayment = new LegalPersonPayment();
+    PhysicalPersonPayment physicalpayment = new PhysicalPersonPayment();*/
 
-    public String getDocument() {
+    public RentalReport(String licensePlate, PersonDocument document, Date date, String hour) {
+        this.document = document;
+        this.licensePlate = licensePlate;
+        this.rentDate = date;
+        this.rentTime = hour;
+    }
+
+    public PersonDocument getDocument() {
         return document;
     }
 
@@ -17,27 +29,19 @@ public class RentalReport {
         return licensePlate;
     }
 
-    public LocalDate getRentDate() {
+    public Date getRentDate() {
         return rentDate;
     }
 
-    public LocalTime getRentTime() {
+    public String getRentTime() {
         return rentTime;
     }
 
-    String licensePlate;
-    LocalDate rentDate;
-    LocalTime rentTime;
-    LocalDateTime devolutionDate;
-
-    public RentalReport(String licensePlate, String document) {
+    public void devolution(PersonDocument document, String licensePlate, Date date, String hour) {
+        this.devolutionDate = date;
         this.document = document;
-        this.licensePlate = licensePlate;
-        this.rentDate = LocalDate.now();
-        this.rentTime = LocalTime.now();
-    }
 
-//    public devolution(String document, String licensePlate) {
-//
-//    }
+        //System.out.println("Status: " + );
+
+    }
 }
